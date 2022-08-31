@@ -6,5 +6,5 @@ import { Component } from "@angular/core";
   styleUrls: ["./success-alert.component.css"]
 })
 export class SuccessAlertComponent {
-
+  message = " Your request has been processed."
 }
