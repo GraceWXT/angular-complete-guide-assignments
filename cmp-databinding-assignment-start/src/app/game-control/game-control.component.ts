@@ -8,17 +8,17 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
 export class GameControlComponent implements OnInit {
   @Output() incrementNumber = new EventEmitter<{ count: number }>();
   intervalId: NodeJS.Timeout;
+  count = 0;
 
   constructor() {}
 
   ngOnInit(): void {}
 
   startCount() {
-    let count = 0;
     this.intervalId = setInterval(() => {
-      count++;
-      this.incrementNumber.emit({ count });
-      console.log("count", count);
+      this.count++;
+      this.incrementNumber.emit({ count: this.count });
+      console.log("count", this.count);
     }, 1000);
   }
 
