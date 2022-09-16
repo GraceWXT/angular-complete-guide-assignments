@@ -17,7 +17,7 @@ export class AppComponent {
       this.evenNumbers.push(newNumber);
     }
 
-    console.log("this.oddNumbers", this.oddNumbers);
-    console.log("this.evenNumbers", this.evenNumbers);
+    // console.log("this.oddNumbers", this.oddNumbers);
+    // console.log("this.evenNumbers", this.evenNumbers);
   }
 }

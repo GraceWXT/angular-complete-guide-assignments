@@ -6,8 +6,9 @@ import { Component, EventEmitter, OnInit, Output } from "@angular/core";
   styleUrls: ["./game-control.component.css"],
 })
 export class GameControlComponent implements OnInit {
+  // Could use new EventEmitter<number>() instead of using an object
   @Output() incrementNumber = new EventEmitter<{ count: number }>();
-  intervalId: NodeJS.Timeout;
+  intervalId;
   count = 0;
 
   constructor() {}
@@ -18,7 +19,7 @@ export class GameControlComponent implements OnInit {
     this.intervalId = setInterval(() => {
       this.count++;
       this.incrementNumber.emit({ count: this.count });
-      console.log("count", this.count);
+      // console.log("count", this.count);
     }, 1000);
   }
 
