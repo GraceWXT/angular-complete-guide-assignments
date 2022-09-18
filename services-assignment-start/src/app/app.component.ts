@@ -5,6 +5,7 @@ import { UsersService } from "./shared/users.service";
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
+  providers: [UsersService],
 })
 export class AppComponent {
   constructor(private usersService: UsersService) {}
