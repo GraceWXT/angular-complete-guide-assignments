@@ -12,7 +12,11 @@
             class="form-control"
             required
             email
+            #email="ngModel"
           />
+          <span *ngIf="!email.valid && email.touched" class="help-block"
+            >Please enter a valid email</span
+          >
         </div>
         <div class="form-group">
           <label for="subscription">Subscription</label>
@@ -35,9 +39,18 @@
             type="password"
             class="form-control"
             required
+            #password="ngModel"
           />
+          <span *ngIf="!password.valid && password.touched" class="help-block"
+            >Please enter a password</span
+          >
         </div>
         <button class="btn btn-success" type="submit">Submit</button>
+        <span
+          *ngIf="!subscriptionForm.valid && subscriptionForm.touched"
+          class="help-block"
+          >Please complete the form before submitting</span
+        >
       </form>
       <!-- Add a Form with the following Inputs (and Validators)
            1) Mail address (should not be empty and should be an email address)
