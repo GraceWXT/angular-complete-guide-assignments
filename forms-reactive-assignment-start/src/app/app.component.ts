@@ -1,5 +1,11 @@
 import { Component, OnInit } from "@angular/core";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {
+  FormBuilder,
+  FormControl,
+  FormGroup,
+  Validators,
+} from "@angular/forms";
+import { Observable } from "rxjs";
 
 @Component({
   selector: "app-root",
@@ -14,9 +20,19 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectForm = this.formBuilder.group({
-      projectName: ["", Validators.required],
+      projectName: ["", Validators.required, this.validateProjectName],
       email: ["", Validators.required, Validators.email],
       projectStatus: [""],
+    });
+  }
+
+  validateProjectName(
+    projectName: FormControl
+  ): Promise<{ [s: string]: boolean }> | Observable<{ [s: string]: boolean }> {
+    return new Promise((resolve) => {
+      projectName.value === "Test"
+        ? resolve({ invalidProjectName: true })
+        : resolve(null);
     });
   }
 }
