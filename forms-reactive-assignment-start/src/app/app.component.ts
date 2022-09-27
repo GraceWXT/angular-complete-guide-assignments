@@ -36,4 +36,8 @@ export class AppComponent implements OnInit {
         : resolve(null);
     });
   }
+
+  onSubmit() {
+    console.log(this.projectForm.value);
+  }
 }
