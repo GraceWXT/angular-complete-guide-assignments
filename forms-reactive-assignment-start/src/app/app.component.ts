@@ -14,7 +14,7 @@ import { Observable } from "rxjs";
 })
 export class AppComponent implements OnInit {
   projectForm: FormGroup;
-  projectStatusOptions: ["Stable", "Critical", "Finished"];
+  projectStatusOptions = ["Stable", "Critical", "Finished"];
 
   constructor(private formBuilder: FormBuilder) {}
 
