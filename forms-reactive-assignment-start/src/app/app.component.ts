@@ -20,8 +20,9 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.projectForm = this.formBuilder.group({
+      // formControlName: [initial value string, sync Validators[], async Validators[]]
       projectName: ["", Validators.required, this.validateProjectName],
-      email: ["", Validators.required, Validators.email],
+      email: ["", [Validators.required, Validators.email]],
       projectStatus: [""],
     });
   }
