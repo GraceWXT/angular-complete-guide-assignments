@@ -44,7 +44,10 @@
             class="form-control"
             formControlName="projectStatus"
           >
-            <option *ngFor="let option of projectStatusOptions" value="option">
+            <option
+              *ngFor="let option of projectStatusOptions"
+              value="{{ option }}"
+            >
               {{ option }}
             </option>
           </select>
