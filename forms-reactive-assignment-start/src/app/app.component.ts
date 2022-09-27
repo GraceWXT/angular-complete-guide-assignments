@@ -5,6 +5,7 @@ import { FormBuilder, FormGroup, Validators } from "@angular/forms";
   selector: "app-root",
   templateUrl: "./app.component.html",
   styleUrls: ["./app.component.css"],
+  providers: [FormBuilder],
 })
 export class AppComponent implements OnInit {
   projectForm: FormGroup;
@@ -15,7 +16,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.projectForm = this.formBuilder.group({
       projectName: ["", Validators.required],
-      mail: ["", Validators.required, Validators.email],
+      email: ["", Validators.required, Validators.email],
       projectStatus: [""],
     });
   }
